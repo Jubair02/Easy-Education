@@ -1,27 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
 @import "tailwindcss";
 
-* {
-  font-family: Outfit;
-}
+/* =========================
+   THEME TOKENS
+   ========================= */
+@theme {
+  /* Font */
+  --font-outfit: Outfit, sans-serif;
 
-:root {
-  /* course details */
-  --text-course-details-heading-small: 26px;
-  --leading-course-details-heading-small: 36px;
-
-  --text-course-details-heading-large: 36px;
-  --leading-course-details-heading-large: 44px;
-
-  /* home */
+  /* Home headings */
   --text-home-heading-small: 28px;
   --leading-home-heading-small: 34px;
 
   --text-home-heading-large: 48px;
   --leading-home-heading-large: 56px;
 
-  /* default */
-  --text-default: 15px;
-  --leading-default: 21px;
+  /* Course details headings */
+  --text-course-details-heading-small: 26px;
+  --leading-course-details-heading-small: 36px;
+
+  --text-course-details-heading-large: 36px;
+  --leading-course-details-heading-large: 44px;
+
+  /* Grid */
+  --grid-auto: repeat(auto-fit, minmax(200px, 1fr));
+
+  /* Spacing */
+  --spacing-section-height: 500px;
+
+  --maxWidth-course-card :424px
+
+  --boxShadow-custom-card : 0px 4px 15 px 2 px rgba(0,0,0,0.1)
 }
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+  body {
+    font-family: var(--font-outfit);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.rich-text { font-size: 15px; color: #7A7B7D; }
+
+.rich-text p { margin-bottom: 16px; }
+
+.rich-text h1 { font-size: 36px; font-weight: 800; color: #252525; margin: 32px 0; }
+
+.rich-text h2 { font-size: 22px; font-weight: 700; color: #252525; margin: 24px 0; }
+
+.rich-text h3 { font-size: 18px; font-weight: 600; color: #333333; margin: 20px 0; }
+
+.rich-text h4 { font-size: 16px; font-weight: 500; color: #444444; margin: 16px 0; }
+
+.rich-text h5 { font-size: 14px; font-weight: 400; color: #555555; margin: 12px 0; }
+
+.rich-text h6 { font-size: 12px; font-weight: 400; color: #666666; margin: 8px 0; }
+
+.rich-text strong { font-weight: 700; }
+
+.rich-text ol { margin-left: 30px; list-style-type: decimal; }
+
+.rich-text ul { margin-left: 30px; list-style-type: disc; }
+
+.rich-text li { margin-bottom: 8px; }
